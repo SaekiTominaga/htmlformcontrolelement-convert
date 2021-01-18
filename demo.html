@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>`FormControlConvert.js` Demo</title>
+		<style>
+			input,
+			textarea {
+				padding: 0.5em;
+				box-sizing: border-box;
+				width: min(40em, 100%);
+				font-size: initial;
+				font-family: initial;
+			}
+
+			.format-mark {
+				color: #e00;
+				background: #fff;
+				font-weight: bold;
+			}
+		</style>
+		<script type="module">
+			import FormControlConvert from './dist/FormControlConvert.js';
+
+			for (const formControlElement of document.querySelectorAll('.js-convert-trim')) {
+				const formControlConvert = new FormControlConvert(formControlElement);
+				formControlConvert.convert({
+					trim: true,
+				});
+			}
+
+			for (const formControlElement of document.querySelectorAll('.js-convert-noblankline')) {
+				const formControlConvert = new FormControlConvert(formControlElement);
+				formControlConvert.convert({
+					noBlankLine: true,
+				});
+			}
+
+			for (const formControlElement of document.querySelectorAll('.js-convert-tohankakueisu')) {
+				const formControlConvert = new FormControlConvert(formControlElement);
+				formControlConvert.convert({
+					toHankakuEisu: true,
+				});
+			}
+
+			for (const formControlElement of document.querySelectorAll('.js-convert-tozenkakueisu')) {
+				const formControlConvert = new FormControlConvert(formControlElement);
+				formControlConvert.convert({
+					toZenkakuEisu: true,
+				});
+			}
+
+			for (const formControlElement of document.querySelectorAll('.js-convert-tohankakuspace')) {
+				const formControlConvert = new FormControlConvert(formControlElement);
+				formControlConvert.convert({
+					toHankakuSpace: true,
+				});
+			}
+
+			for (const formControlElement of document.querySelectorAll('.js-convert-combinespace')) {
+				const formControlConvert = new FormControlConvert(formControlElement);
+				formControlConvert.convert({
+					combineSpace: true,
+				});
+			}
+
+			for (const formControlElement of document.querySelectorAll('.js-convert-tolowercase')) {
+				const formControlConvert = new FormControlConvert(formControlElement);
+				formControlConvert.convert({
+					toLowerCase: true,
+				});
+			}
+
+			for (const formControlElement of document.querySelectorAll('.js-convert-touppercase')) {
+				const formControlConvert = new FormControlConvert(formControlElement);
+				formControlConvert.convert({
+					toUpperCase: true,
+				});
+			}
+
+			for (const formControlElement of document.querySelectorAll('.js-convert-table')) {
+				const formControlConvert = new FormControlConvert(formControlElement);
+				formControlConvert.convert({}, { '．': '.', '％': '%' });
+			}
+		</script>
+	</head>
+	<body>
+		<h1>`FormControlConvert.js` Demo</h1>
+
+		<section>
+			<h2>Remove whitespace at both ends</h2>
+
+			<p>e.g. <span class="format-mark">␣</span>hoge<span class="format-mark">␣</span> → hoge</p>
+
+			<p><input class="js-convert-trim" /></p>
+			<p><textarea class="js-convert-trim"></textarea></p>
+		</section>
+
+		<section>
+			<h2>delete blank lines</h2>
+
+			<p>e.g. hoge<span class="format-mark">⏎⏎</span>piyo → hoge<span class="format-mark">⏎</span>piyo</p>
+
+			<p><textarea class="js-convert-noblankline"></textarea></p>
+		</section>
+
+		<section>
+			<h2>Make alphanumeric characters half-width</h2>
+
+			<p>e.g. ｈｏｇｅ－１２３ → hoge-123</p>
+
+			<p><input class="js-convert-tohankakueisu" /></p>
+		</section>
+
+		<section>
+			<h2>Make alphanumeric characters full-width</h2>
+
+			<p>e.g. hoge-123 → ｈｏｇｅ－１２３</p>
+
+			<p><input class="js-convert-tozenkakueisu" /></p>
+		</section>
+
+		<section>
+			<h2>Make full-width space half-width</h2>
+
+			<p><input class="js-convert-tohankakuspace" /></p>
+		</section>
+
+		<section>
+			<h2>Consolidate contiguous spaces</h2>
+
+			<p>e.g. hoge<span class="format-mark">␣␣</span>piyo → hoge<span class="format-mark">␣</span>piyo</p>
+
+			<p><input class="js-convert-combinespace" /></p>
+		</section>
+
+		<section>
+			<h2>Make the alphabet lowercase</h2>
+
+			<p>e.g. HOGE → hoge</p>
+
+			<p><input class="js-convert-tolowercase" /></p>
+		</section>
+
+		<section>
+			<h2>Make the alphabet uppercase</h2>
+
+			<p>e.g. hoge → HOGE</p>
+
+			<p><input class="js-convert-touppercase" /></p>
+		</section>
+
+		<section>
+			<h2>Proprietary conversion table</h2>
+
+			<p>e.g. 50．0％ → 50.0% (When <code>{ '．': '.', '％': '%' }</code> is specified as the second argument)</p>
+
+			<p><input class="js-convert-table" /></p>
+		</section>
+	</body>
+</html>

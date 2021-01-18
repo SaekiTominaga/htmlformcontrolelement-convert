@@ -1,0 +1,46 @@
+{
+	"name": "@saekitominaga/htmlformcontrolelement-convert",
+	"version": "1.0.0",
+	"description": "Converting input value of form control.",
+	"homepage": "https://github.com/SaekiTominaga/htmlformcontrolelement-convert#readme",
+	"bugs": {
+		"url": "https://github.com/SaekiTominaga/htmlformcontrolelement-convert/issues"
+	},
+	"license": "MIT",
+	"author": "Saeki Tominaga",
+	"files": [
+		"dist",
+		"src"
+	],
+	"type": "module",
+	"browser": "dist/FormControlConvert.js",
+	"types": "dist/FormControlConvert.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SaekiTominaga/htmlformcontrolelement-convert.git"
+	},
+	"scripts": {
+		"_build:tsc": "tsc -w",
+		"_build:compress": "onchange -f add -f change -v dist/FormControlConvert.js -- brotlin compress dist/FormControlConvert.js -m 1",
+		"_build:minify": "onchange -f add -f change -v dist/FormControlConvert.js -- terser dist/FormControlConvert.js -o dist/FormControlConvert.min.js -c ecma=2020 --mangle --ecma 2020 --module --source-map content='dist/FormControlConvert.js.map',filename='FormControlConvert.js',includeSources,url='FormControlConvert.min.js.map'",
+		"_build:minify-compress": "onchange -f add -f change -v dist/FormControlConvert.min.js -- brotlin compress dist/FormControlConvert.min.js -m 1",
+		"_build:minify-declaration": "onchange -f add -f change -v dist/FormControlConvert.d.ts -- cpy dist/FormControlConvert.d.ts dist --rename=FormControlConvert.min.d.ts",
+		"build": "run-p _build:*"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^4.13.0",
+		"@typescript-eslint/parser": "^4.13.0",
+		"brotlin": "^1.1.0",
+		"cpy-cli": "^3.1.1",
+		"eslint": "^7.17.0",
+		"eslint-config-prettier": "^7.1.0",
+		"eslint-plugin-jsdoc": "^30.7.9",
+		"npm-run-all": "^4.1.5",
+		"onchange": "^7.1.0",
+		"terser": "^5.5.1",
+		"typescript": "^4.1.3"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
