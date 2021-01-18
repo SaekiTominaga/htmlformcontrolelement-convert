@@ -47,6 +47,7 @@ new FormControlConvert(
 | convert(options?: convertOptions, table?: convertTable) | {void} | Perform the conversion |
 
 ```
+/* Specify the conversion type */
 interface convertOptions {
   trim?: boolean; // Remove whitespace at both ends
   noBlankLine?: boolean; // Delete blank lines
@@ -58,6 +59,7 @@ interface convertOptions {
   toUpperCase?: boolean; // Make the alphabet uppercase (Only one of `toLowerCase` and `toUpperCase` can be specified)
 }
 
+/* Proprietary conversion table (An associative array that specifies the character string before conversion as the key and the character string after conversion as the value) */
 interface convertTable {
   [key: string]: string;
 }
