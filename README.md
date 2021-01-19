@@ -23,6 +23,8 @@ for (const formControlElement of document.querySelectorAll('.js-convert')) {
   });
 }
 </script>
+
+<p><input class="js-convert"/></p>
 ```
 
 ## Constructor
