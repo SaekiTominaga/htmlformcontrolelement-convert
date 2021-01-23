@@ -8,7 +8,7 @@
 
 ## Examples
 
-```
+```HTML
 <script type="module">
 import FormControlConvert from './dist/FormControlConvert.js';
 
@@ -29,7 +29,7 @@ for (const formControlElement of document.querySelectorAll('.js-convert')) {
 
 ## Constructor
 
-```
+```TypeScript
 new FormControlConvert(
   thisElement: HTMLInputElement | HTMLTextAreaElement
 )
@@ -48,7 +48,7 @@ new FormControlConvert(
 |-|-|-|
 | convert(options?: convertOptions, table?: convertTable) | {void} | Perform the conversion |
 
-```
+```TypeScript
 /* Specify the conversion type */
 interface convertOptions {
   trim?: boolean; // Remove whitespace at both ends
