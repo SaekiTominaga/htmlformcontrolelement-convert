@@ -1,6 +1,6 @@
 {
 	"name": "@saekitominaga/htmlformcontrolelement-convert",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Converting input value of form control.",
 	"homepage": "https://github.com/SaekiTominaga/htmlformcontrolelement-convert#readme",
 	"bugs": {
