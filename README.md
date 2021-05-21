@@ -38,15 +38,16 @@ new FormControlConvert(
 ### Parameters
 
 <dl>
-<dt>thisElement [required]</dt>
+<dt><code>thisElement</code> [required]</dt>
 <dd>Target element</dd>
 </dl>
 
 ## Methods
 
-| Name | Returns | Description |
-|-|-|-|
-| convert(options?: convertOptions, table?: convertTable) | {void} | Perform the conversion |
+<dl>
+<dt><code>convert(options?: convertOptions, table?: convertTable): void</code></dt>
+<dd>Perform the conversion</dd>
+</dl>
 
 ```TypeScript
 /* Specify the conversion type */
